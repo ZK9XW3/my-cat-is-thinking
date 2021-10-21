@@ -168,6 +168,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"pm.environment.set(\"lastAddedTought\", pm.response.json()['id']);",
+							"",
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});"
@@ -254,7 +256,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/thoughts/1",
+					"raw": "http://127.0.0.1:8000/api/thoughts/{{lastAddedTought}}",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -266,7 +268,7 @@
 					"path": [
 						"api",
 						"thoughts",
-						"1"
+						"{{lastAddedTought}}"
 					]
 				}
 			},
