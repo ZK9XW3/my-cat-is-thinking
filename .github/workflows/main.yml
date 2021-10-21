@@ -32,21 +32,6 @@ jobs:
           php-version: 7.4.3
           # Setup PHP extensions.
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, json, pcre, session, tokenizer, simplexml
-          
-      - name: Composer install
-        run: composer install
-        
-      - name: move jwt keys
-        run: mv ./config/jwt/private_test.pem ./config/jwt/private.pem && ./config/jwt/public_test.pem ./config/jwt/public.pem
-        
-      - name: create database
-        run: php bin/console doctrine:database:create --env=test
-        
-      - name: migrate
-        run: php bin/console doctrine:migration:migrate --env=test --no-interaction
-        
-      - name: server start
-        run: php -S localhost:8000 -t public
         
       - name: Newman Action
         # You may pin to the exact commit or the version.
