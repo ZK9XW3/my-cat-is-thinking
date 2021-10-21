@@ -1,0 +1,41 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    
+    - name: before_script 
+      run: |
+        apt-get update && apt-get install -y git libzip-dev npm wget
+        curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
+        docker-php-ext-install zip
+        wget https://get.symfony.com/cli/installer -O - | bash
+        mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+        npm install -g newman
+        composer install
+        mv ./config/jwt/private_test.pem ./config/jwt/private.pem && mv ./config/jwt/public_test.pem ./config/jwt/public.pem 
+        symfony server:ca:install && symfony serve -d
+        php bin/console doctrine:database:create --env=test
+        php bin/console doctrine:migration:migrate --env=test --no-interaction
+        
+    - name: Newman
+      run: |
+        newman run ./postman/postman_collection.json -e ./postman/postman_environment.json
+
+
+
+    # - name: Run test suite
+    #   run: composer run-script test
