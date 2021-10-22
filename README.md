@@ -21,6 +21,7 @@ PS: I'm tryin to make a well documented project so i get use to be a good colleg
 
 ## Postman
 - there is a folder name postman with collection and environment
+- you need to be on http://localhost:8000 if you want the tests to work
 - you can run the tests with newman `newman run ./postman/postman_collection.json -e ./postman/postman_environment.json`
 
 ## API
