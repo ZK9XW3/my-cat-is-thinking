@@ -4,13 +4,11 @@ name: PHP Linting
 on: pull_request
 jobs:
 
-  phplint:
-    runs-on: ubuntu-latest
-    steps:
-        - uses: actions/checkout@v1
-        - uses: michaelw90/PHP-Lint@master
-        - uses: actions/checkout@v2
-        - uses: php-actions/composer@v5 # or alternative dependency management
-        - uses: php-actions/phpstan@v2
-        
-  
+  build-test:
+      runs-on: ubuntu-latest
+
+      steps:
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v5 # or alternative dependency management
+      - uses: php-actions/phpstan@v2
+    
