@@ -9,7 +9,6 @@ jobs:
 
       steps:
       - uses: actions/checkout@v2
-      - name: composer install
-          runs: composer install
+      - uses: php-actions/composer@v2
       - uses: php-actions/phpstan@v2
     
