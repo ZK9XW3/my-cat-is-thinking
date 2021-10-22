@@ -9,10 +9,8 @@ jobs:
     steps:
         - uses: actions/checkout@v1
         - uses: michaelw90/PHP-Lint@master
-        - uses: actions/checkout@master
-        - name: PHP-CS-Fixer
-          uses: docker://oskarstark/php-cs-fixer-ga
-          with:
-            args: --diff --dry-run    
-
+        - uses: actions/checkout@v2
+        - uses: php-actions/composer@v5 # or alternative dependency management
+        - uses: php-actions/phpstan@v2
+        
   
