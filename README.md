@@ -13,6 +13,7 @@ Front-End side i'm using a litlle bit of bootstrap, flex properties, vanilla JS 
 PS: I'm tryin to make a well documented project so i get use to be a good collegue !!! man_office_worker
 
 ## Installation
+**Infos** you need the FE side to get the user experience it's here ==>> https://github.com/ZK9XW3/my-cat-is-thinking-front
 - composer install
 - set your .env.local
 - doctrine:database:create
