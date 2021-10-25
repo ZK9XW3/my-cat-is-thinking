@@ -1,23 +1,24 @@
-# What is my cat thinking ?
+# What is my cat thinking ? 🐈 🐱
 ## Description
-
 Ever wondered what was your cat thoughts ? Here is the answer !!!
 
-Seriously it is only a small project wich is meant to make me discover API platform and postman unit tests.
+Seriously it's only a small project wich is meant to make me discover API platform and postman unit tests BE side and Axios FE side.
 
-With this project i'm working with my beloved Symfony on API, JWT, and unit test with postman.
-I also made a very simple integration workflow with just a phpLinter. The goal was to get an overview of github actions and workflows to do something a bit similar as a CI environment.
+🎾 Back-End side i'm working with my beloved Symfony on API, JWT, and unit test with postman. I also made a very simple integration pipeline with just a phpLinter. The goal was to get an overview of github actions and workflows to do something a bit similar as a CI environment.
 
-Front-End side i'm gonna start simple maybe with bootstrap, webpack encore, or just flex still not sure yet.
+Front-End side i'm using a litlle bit of bootstrap, flex properties, vanilla JS and Axios library to make requests to my API. There's also http-server node module to run the webpage.
 
-PS: I'm tryin to make a well documented project so i get use to be a good collegue !!!
+⌚ Later on i plan on coding an admin page where authenticated users could add or edit thoughts... Since API side, the endpoints for adding and editing thoughts and users already exists, most of the work is gonna be FE side. Still i will have to add an upload image feature with API platform... but yeah later slightly_smiling_face
+
+PS: I'm tryin to make a well documented project so i get use to be a good collegue !!! man_office_worker
 
 ## Installation
 - composer install
 - set your .env.local
 - doctrine:database:create
 - doctrine:migrations:migrate
-- launch the server
+- run the sql command add-data-thought-command.sql to add data to the database
+- launch the server (php -S localhost:8000 -t public or using symfony CLI)
 
 ## Postman
 - there is a folder name postman with collection and environment
