@@ -1,4 +1,7 @@
 # What is my cat thinking ? 🐈 🐱
+
+<img src="https://github.com/ZK9XW3/my-cat-is-thinking-front/blob/main/assets/img/thumbnails/my-cat-is-thinking-homepage.png" />
+
 ## Description
 Ever wondered what was your cat thoughts ? Here is the answer !!!
 
